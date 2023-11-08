@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
-    <header>
+    <header class="Encabezado">
         <h1>Encabezado de la Página</h1>
     </header>
 
-    <nav>
+    <nav class="navigation">
         <ul>
             <li><a href="#">Enlace 1</a></li>
             <li><a href="#">Enlace 2</a></li>
@@ -20,12 +20,12 @@
         </ul>
     </nav>
 
-    <aside>
+    <aside class="asidebar">
         <h2>Barra lateral</h2>
         <p>Contenido de la barra lateral.</p>
     </aside>
 
-    <section>
+    <section class="content">
         <header>
             <h2>Título de la Sección</h2>
         </header>
@@ -35,13 +35,20 @@
             <p>Contenido del artículo 1.</p>
         </article>
 
-        <footer>
+        <footer><!--suponemos que la calse lo tenemos qui class="no-puedo-usar-inline-styles" style="background: red;"-->
             <p>Pie de página de la sección</p>
         </footer>
     </section>
 
-    <footer>
+    <footer class="footer">
         <p>Pie de página global</p>
     </footer>
+    
 </body>
 </html>
+<!--<div class="no-puedo-usar-inline-styles" style="background: red;">Contenido</div>
+css: /* Establecer el fondo en verde para elementos con la clase "no-puedo-usar-inline-styles" */
+.no-puedo-usar-inline-styles {
+  background: green !important;
+}
+-->

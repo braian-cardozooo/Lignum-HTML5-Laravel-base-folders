@@ -18,7 +18,7 @@ html {
 
   
     section {
-        background-color: #e70390;
+        background-color:807b7e;
         padding: 10px;
     }
 
@@ -36,4 +36,41 @@ html {
     }
 
 
+  /*-----------------*/
+
+ .Encabezado{
+    font-size: 46px;
+  }
   
+  .footer {
+    font-size: 10px;
+  }
+  
+  .content {
+    font-size: 14px;
+  }
+  
+  .navegation {
+    font-size: 12px;
+  }
+  
+
+  .sidebar {
+    font-size: 10px;
+  }
+  
+  /*   cambiando el fondo segun la letra con la que termine el atributo de la clase*/
+
+/* Establecer el fondo magenta para clases que terminen con "r" */
+[class$="r"] {
+    background-color: magenta;
+  }
+  
+  /* Establecer el fondo azul para clases que contengan "a" pero no terminen con "r" */
+  [class*="a"]:not([class$="r"]) {
+    background-color: blue;
+  }
+  
+  /*.no-puedo-usar-inline-styles {
+    background: green !important;
+  }*/
