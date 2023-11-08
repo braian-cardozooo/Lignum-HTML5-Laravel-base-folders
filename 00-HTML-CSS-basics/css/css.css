@@ -1,0 +1,39 @@
+
+html {
+    font-size: 14px;
+    font-family: 'Arial', sans-serif; /* Puedes reemplazar 'Arial' con la fuente que desees */
+}
+    header {
+        background-color: #1b18e4; 
+        text-align: center; /* Centrar el texto */
+        padding: 20px;
+    }
+
+    
+    nav {
+        background-color: #26a300;
+        
+        padding: 10px;
+    }
+
+  
+    section {
+        background-color: #e70390;
+        padding: 10px;
+    }
+
+    /* Estilo para el aside */
+    aside {
+        background-color: #aeb118;
+        padding: 10px;
+    }
+
+    /* Estilo para el pie de página (footer) */
+    footer {
+        background-color: #333;
+        text-align: center; /* Centrar el texto */
+        padding: 10px;
+    }
+
+
+  
