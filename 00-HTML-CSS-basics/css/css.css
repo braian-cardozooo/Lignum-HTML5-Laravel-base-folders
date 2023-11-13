@@ -1,11 +1,20 @@
 
 html {
     font-size: 14px;
-    font-family: 'Arial', sans-serif; /* Puedes reemplazar 'Arial' con la fuente que desees */
-}
+    font-family: 'Arial', sans-serif; }
+    html >*{
+        border-radius: 10px; 
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        padding:10px;
+        background-color: aquamarine;
+    }
+    
     header {
         background-color: #1b18e4; 
-        text-align: center; /* Centrar el texto */
+        text-align: center; 
         padding: 20px;
     }
 
@@ -22,50 +31,143 @@ html {
         padding: 10px;
     }
 
-    /* Estilo para el aside */
+   
     aside {
         background-color: #aeb118;
         padding: 10px;
     }
 
-    /* Estilo para el pie de página (footer) */
+    
     footer {
         background-color: #333;
-        text-align: center; /* Centrar el texto */
+        text-align: center; 
         padding: 10px;
     }
 
 
-  /*-----------------*/
+  /*-------------------------------------------------------*/
 
- .Encabezado{
+  .contenedo {
+    display: flex;
+   flex-direction: row;
+    gap: 10px;
+    margin: 0;
+    gap: 40px;
+}
+
+.contenedo > * {
+    border-radius: 10px;
+}
+
+.encabezado {
+    border-radius: 10px;
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+    background: blue;
+    flex: 100%;
+    margin-bottom: 10px;
     font-size: 46px;
-  }
   
-  .footer {
-    font-size: 10px;
-  }
-  
-  .content {
-    font-size: 14px;
-  }
-  
-  .navegation {
+    
+    
+}
+
+.navigation {
+    text-align: center;
     font-size: 12px;
-  }
+    color: #fff;
+    padding: 20px;
+    min-width: 200px;
+    height: 100vh;
+    flex: 20%;
+    background-color: blue;
+    border-radius: 10px;
+    width: 100%;
+    height: 100vmax;
+     
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    font-size: 12px;
+    min-height: 600px;
+    flex: 60%;
+    background-color: lightblue;
+    border-radius: 10px;
+    width: 100%;
+    height: 100vmax;
+}
+
+.content > * {
+    border-radius: 10px;
+}
+
+.content header {
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    height: 20%;
+}
+
+.content article {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    height: 70%;
+    background-color: blue;
+}
+
+.content footer {
+    padding: 30px;
+    font-size: 10px;
+    text-align: center;
+    color: #fff;
+    height: 10%;
+}
+
+.sidebar {
+  text-align: center;
+  font-size: 10px;
+  color: #fff;
+  padding: 20px;
+  min-width: 200px;
+  height: 100vh;
+  flex: 20%;
+  background-color: blue;
+  border-radius: 10px;
+  width: 100%;
+  height: 100vmax;
+}
+
+.footer {
+    text-align: center;
+    font-size: 10px;
+    color: #fff;
+    padding: 20px;
+    min-width: 200px;
+    height: 10vh;
+    flex: 100%;
+    background-color: blue;
+    border-radius: 10px;
+    margin-top: 10px;
+
+    
+}
   
 
-  .sidebar {
-    font-size: 10px;
-  }
-  
-  /*   cambiando el fondo segun la letra con la que termine el atributo de la clase*/
+
+/*---------------------------------------------------*/
+ 
 
 /* Establecer el fondo magenta para clases que terminen con "r" */
 [class$="r"] {
     background-color: magenta;
-  }
-  
+}
   /* Establecer el fondo azul para clases que contengan "a" pero no terminen con "r" */
   [class*="a"]:not([class$="r"]) {
     background-color: blue;
