@@ -1,0 +1,229 @@
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flexbox;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+/*estilo del main */
+main {
+    margin-top: 20px;
+
+}
+
+/* diseño del heder*/
+header {
+
+    color: #fff #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-bottom: 3px solid;
+}
+
+header>h1 {
+    margin-right: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: dashed;
+}
+
+nav a {
+    color: black;
+    font-weight: 600;
+    padding-right: 30px;
+
+}
+
+nav a:hover {
+    color: aqua
+}
+
+header {
+    margin-top: auto;
+}
+
+/*________________*/
+
+/*articol*/
+
+.ll {
+     margin-left: 600px;
+    height: 100px;
+    width: 400px;
+    font-size: 20px;
+}
+
+article {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 200px;
+
+   
+}
+
+/*-------------------*/
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 200px auto;
+    padding-bottom: 100px;
+
+}
+
+/* aqui esta todo el diseño de la cartas */
+.carta {
+    height: 300px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+    position: relative;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.intro {
+    height: 50px;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    position: absolute;
+    background-color: rgb(27, 27, 27, .5);
+    bottom: 0;
+    transition: .5s;
+}
+
+h2 {
+    margin: 10px;
+    font-size: 30px;
+
+}
+
+p {
+    margin: 10px 20px;
+    font-size: 20px;
+
+}
+
+.carta:hover {
+    cursor: pointer;
+}
+
+.carta:hover .intro {
+    height: 100%;
+    background-color: black;
+}
+
+.carta:hover p {
+    visibility: visible;
+    opacity: 1;
+    color: white;
+}
+
+.carta:hover h2 {
+    color: white;
+}
+
+/*para hacer responsive mi pag*/
+
+@media screen and (min-width: 768px) {
+    
+    .container { grid-template-columns: repeat(3, 1fr);
+       
+    }
+    
+    
+}
+
+@media screen and (max-width: 824px) {
+    
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+        
+        
+    }
+    header {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+      header >h1, nav{
+        width: 50%;
+      }
+      article{
+        padding-bottom: 100px;
+        display: contents;
+        
+       
+      }
+      .ll{
+        margin: auto;
+        
+       
+        line-height: 2;
+      }
+     
+}
+/*
+
+@media only screen and (max-width: 900px) {
+    body {
+        font-size: 14px;
+      }
+      header {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      header >h1, nav{
+        width: 50%;
+      }
+      
+      article{
+        padding-bottom: 100px;
+        display: flex
+        
+        
+      }
+      .ll{
+        margin: auto;
+        padding: 20px;
+      }
+      .container{
+        padding: 20px;
+        display:contents;
+       
+      }
+      .carta{
+        margin-bottom: 20px;
+      }
+}*/
+
+
+
+
+  
+
+
+
+
