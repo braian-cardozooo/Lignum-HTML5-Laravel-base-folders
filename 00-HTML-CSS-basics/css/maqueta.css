@@ -130,7 +130,7 @@ p {
 
 .carta:hover .intro {
     height: 100%;
-    background-color: black;
+    background-color:rgb(43, 43, 43, 0.699);
 }
 
 .carta:hover p {
