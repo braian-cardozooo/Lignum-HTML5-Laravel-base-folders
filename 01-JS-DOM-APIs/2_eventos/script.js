@@ -8,3 +8,7 @@ window.addEventListener("DOMContentLoaded", function() {
     
 });
 
+function mostrarAlerta() {
+    alert("MENSAJE DE ALERTA MI LOCO!!!!!!.");
+}
+

@@ -1,0 +1,20 @@
+section{
+    text-align: center;
+}
+
+
+.fade-in {
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } /*de opacidad 0 
+    a pacidad 1*/
+    to {
+        opacity: 1;
+    }
+   
+}
