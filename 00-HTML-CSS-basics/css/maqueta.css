@@ -184,42 +184,6 @@ p {
       }
      
 }
-/*
-
-@media only screen and (max-width: 900px) {
-    body {
-        font-size: 14px;
-      }
-      header {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-      }
-      header >h1, nav{
-        width: 50%;
-      }
-      
-      article{
-        padding-bottom: 100px;
-        display: flex
-        
-        
-      }
-      .ll{
-        margin: auto;
-        padding: 20px;
-      }
-      .container{
-        padding: 20px;
-        display:contents;
-       
-      }
-      .carta{
-        margin-bottom: 20px;
-      }
-}*/
-
-
 
 
   
