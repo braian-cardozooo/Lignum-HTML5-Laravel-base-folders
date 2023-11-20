@@ -1,0 +1,38 @@
+section{
+    text-align: center;
+}
+
+
+.fade-in {
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } /*de opacidad 0 
+    a pacidad 1*/
+    to {
+        opacity: 1;
+    }
+   
+}
+
+
+
+body{
+    text-align: center;
+    background-color: aquamarine;
+    font-family: Arial, Helvetica, sans-serif;
+}
+button{
+    border-radius: 105px;
+    background-color: blue;
+}
+button:hover{
+background-color: aquamarine;
+border-radius: 105px;
+font-weight: 900;
+transition: background-color ase-in-out .5s;
+}
