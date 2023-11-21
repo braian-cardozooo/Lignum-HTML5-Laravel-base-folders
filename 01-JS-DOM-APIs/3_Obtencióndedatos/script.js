@@ -12,13 +12,13 @@ function mostrarAlerta() {
     alert("MENSAJE DE ALERTA MI LOCO!!!!!!.");
 }
 
-
+/*----------------------------------chucknorris----------------------------------------*/
 
 
 // Selecciona el primer botón encontrado en el documento
 const but = document.querySelector('button');
 
-// Selecciona el primer elemento h2 encontrado en el documento
+// Selecciona el primer elemento h3 encontrado en el documento
 const parrafo = document.querySelector('h3');
 
 // Agrega un event listener al botón que ejecuta la función getData cuando se hace clic
@@ -40,4 +40,10 @@ async function getData() {
         console.error(e);
     }
 }
+
+
+
+
+
+
 
