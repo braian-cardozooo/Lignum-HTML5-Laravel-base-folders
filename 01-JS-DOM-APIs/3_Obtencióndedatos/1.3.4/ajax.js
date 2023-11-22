@@ -94,3 +94,15 @@ function ajax(config) {
         xhr.send();
     });
 }
+
+
+/* datasooooo------------------------------------------------------
+Ajax (Asynchronous JavaScript and XML)
+ es una técnica de desarrollo web que permite realizar 
+ solicitudes asíncronas al servidor desde el navegador 
+ sin necesidad de recargar toda la página. 
+
+
+ Una promesa es un objeto en JavaScript que representa el eventual resultado 
+ (o fracaso) de una operación asíncrona. Proporciona una manera más limpia y
+  estructurada de manejar operaciones asíncronas en comparación con los callbacks anidados.*/
