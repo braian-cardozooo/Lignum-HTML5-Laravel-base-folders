@@ -28,7 +28,7 @@ but.addEventListener('click', getData);
 async function getData() {
     try {
         // Realiza una solicitud a la API de Chuck Norris para obtener un chiste aleatorio
-        const data = await fetch('https://api.chucknorris.io/jokes/random');
+        const data = await fetch('https://.chucknorris.io/jokes/random');
 
         // Convierte la respuesta a formato JSON
         const json = await data.json();

@@ -1,99 +1,47 @@
 
-function makeAjaxCall() {
-    // Configuración de la llamada AJAX
-    var config = {
-        method: 'GET', // Método HTTP (GET, POST, etc.)
-        url: 'https://api.chucknorris.io/jokes/random', // URL del servicio
-    };
+// Función reutilizable para realizar llamadas AJAX
+function realizarLlamadaAjax(url, metodo, datos) {
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(metodo, url, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
 
-    // Llamada a la función AJAX
-    ajax(config)
-        .then(data => {
-            // Manipular los datos obtenidos y mostrar solo los valores deseados
-
-            // Seleccionar el elemento donde se mostrarán los resultados
-            var resultSection = document.getElementById('result');
-            
-            // Limpiar contenido anterior
-            resultSection.innerHTML = '';
-
-            // Función para crear párrafos solo si el valor no es undefined o vacío
-            function createParagraph(key, value) {
-                if (value !== undefined && value !== '') {
-                    var paragraph = document.createElement('p');
-                    paragraph.textContent = value;
-                    resultSection.appendChild(paragraph);
-                }
+        xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                resolve(xhr.response);
+            } else {
+                reject(new Error('Error en la solicitud. Estado: ' + xhr.status));
             }
+        };
 
-            // Excluir las propiedades que no deseas mostrar
-            createParagraph('categories', data.categories);
-            createParagraph('value', data.value);
+        xhr.onerror = function () {
+            reject(new Error('Error de red'));
+        };
 
-/*// Iterar sobre las propiedades del objeto data y mostrar solo los valores
-for (var key in data) {
-    if (data.hasOwnProperty(key)) {
-        var value = data[key];
-        var paragraph = document.createElement('p');
-        paragraph.textContent = key + ': ' + value;
-        resultSection.appendChild(paragraph);}}*/
+        xhr.send(JSON.stringify(datos));
+    });
+}
 
+// Función para obtener la respuesta de la API de Chuck Norris
+function obtenerFraseChuckNorris() {
+    var url = 'https://api.chucknorris.io/jokes/random';
+
+    realizarLlamadaAjax(url, 'GET', null)
+        .then(function (respuesta) {
+            var respuestaElemento = document.getElementById('respuesta');
+            respuestaElemento.style.color = 'black'; // Restablecer color
+            respuestaElemento.textContent = JSON.parse(respuesta).value;
         })
-        .catch(error => {
-            // Manejar errores y poner la sección en rojo
-            
-            // Seleccionar el elemento donde se mostrarán los resultados
-            var resultSection = document.getElementById('result');
-
-            // Mostrar mensaje de error en rojo
-            resultSection.innerHTML = 'Error en la llamada AJAX';
-            resultSection.classList.add('error');
-            
-            // Registrar el error en la consola
-            console.error('Error en la llamada AJAX:', error);
+        .catch(function (error) {
+            console.error('Error:', error);
+            var respuestaElemento = document.getElementById('respuesta');
+            respuestaElemento.style.color = 'red'; // Establecer color rojo en caso de error
+            respuestaElemento.textContent = 'Error al obtener la broma';
         });
 }
 
-// Función reutilizable para realizar llamadas AJAX y devolver una promesa
-function ajax(config) {
-    // Devolver una nueva promesa
-    return new Promise(function(resolve, reject) {
-        // Crear una instancia de XMLHttpRequest
-        var xhr = new XMLHttpRequest();
-
-        // Configuración de la solicitud
-        xhr.open(config.method, config.url, true);
-
-        // Definición de funciones de devolución de llamada
-        xhr.onload = function() {
-            // Verificar si la solicitud fue exitosa (código en el rango 200-299)
-            if (xhr.status >= 200 && xhr.status < 300) {
-                // La llamada fue exitosa
-
-                // Intentar analizar la respuesta JSON
-                try {
-                    var responseData = JSON.parse(xhr.responseText);
-                    // Resolver la promesa con los datos obtenidos
-                    resolve(responseData);
-                } catch (parseError) {
-                    // Error al analizar la respuesta JSON
-                    reject(parseError);
-                }
-            } else {
-                // La llamada falló, rechazar la promesa con el mensaje de estado
-                reject(xhr.statusText);
-            }
-        };
-
-        xhr.onerror = function() {
-            // Error de red, rechazar la promesa con un mensaje de error de red
-            reject('Error de red al intentar realizar la llamada AJAX');
-        };
-
-        // Realizar la solicitud
-        xhr.send();
-    });
-}
+// Reemplazar el evento de clic del botón con la nueva función
+document.getElementById('obtenerfrase').addEventListener('click', obtenerFraseChuckNorris);
 
 
 /* datasooooo------------------------------------------------------
